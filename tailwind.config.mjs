@@ -10,6 +10,11 @@ export default {
 				sans: ['Barlow', ...defaultTheme.fontFamily.sans],
 				serif: ['Bellefair', ...defaultTheme.fontFamily.serif],
 			},
+			colors: {
+				'main': '#0B0D17',
+				'accent': '#D0D6F9',
+				'white': '#FFFFFF',
+			},
 		},
 	},
 	plugins: [],
