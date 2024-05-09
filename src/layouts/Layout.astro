@@ -2,6 +2,8 @@
 import '@fontsource/barlow';
 import '@fontsource/bellefair';
 
+import Header from '../components/Header.astro';
+
 interface Props {
   title: string;
 }
@@ -19,7 +21,8 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="text-whites">
+    <Header/>
     <slot />
   </body>
 </html>
