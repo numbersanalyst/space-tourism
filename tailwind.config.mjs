@@ -8,6 +8,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Barlow', ...defaultTheme.fontFamily.sans],
+				condensed: ['Barlow Condensed', ...defaultTheme.fontFamily.sans],
 				serif: ['Bellefair', ...defaultTheme.fontFamily.serif],
 			},
 			colors: {
