@@ -3,9 +3,14 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <img src="/home/background-home-desktop.jpg" alt="">
-    <h1 class="text-9xl font-serif">VENUS</h1>
-    <h2>Hello USA</h2>
+  <main class="bg-[url('/home/background-home-desktop.jpg')] bg-cover h-screen pt-36 flex justify-around content-center flex-wrap bg-black">
+    <div>
+      <p class="font-condensed uppercase text-accent text-[28px] tracking-[4.75px]">So, you want to travel</p>
+      <h1 class="font-serif uppercase text-[150px]">Space</h1>
+      <p class="text-lg text-accent max-w-[500px]">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
+    </div>
+    <div class="flex justify-end items-end">
+      <a class="font-serif text-[32px] uppercase bg-white text-black w-[274px] h-[274px] rounded-full flex items-center justify-center transition-shadow duration-700 hover:shadow-circle" href="destination.astro">Explore</a>
+    </div>
   </main>
 </Layout>
