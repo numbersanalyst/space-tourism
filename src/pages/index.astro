@@ -1,8 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import { getImage } from "astro:assets";
+import background from "../assets/home/background-home-desktop.jpg";
+const optimizedBackground = await getImage({src: background, format: 'webp'});
 ---
 
-<Layout title="Space tourism" background="./home/background-home-desktop.jpg">
+<Layout title="Space tourism" background={optimizedBackground.src}>
   <div>
     <p class="font-condensed uppercase text-accent text-[28px] tracking-[4.75px]">So, you want to travel</p>
     <h1 class="font-serif uppercase text-[150px]">Space</h1>

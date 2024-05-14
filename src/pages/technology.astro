@@ -1,6 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import { getImage } from "astro:assets";
+import background from "../assets/technology/background-technology-desktop.jpg";
+const optimizedBackground = await getImage({src: background, format: 'webp'});
 ---
 
-<Layout title="Space tourism - Technology" background="./technology/background-technology-desktop.jpg">
+<Layout title="Space tourism - Technology" background={optimizedBackground.src}>
 </Layout>
