@@ -1,0 +1,13 @@
+---
+interface Props {
+    number: String;
+    title: String;
+}
+
+const {number, title} = Astro.props;
+---
+
+<div>
+    <p class="uppercase font-condensed text-[28px] tracking-[4.75px]"><span class="opacity-25 font-bold mr-2">{number}</span>{title}</p>
+    <slot />
+</div>

@@ -6,8 +6,8 @@ import "@fontsource/barlow-condensed";
 import Header from "../components/Header.astro";
 
 interface Props {
-  title: string;
-  background: string;
+  title: String;
+  background: String;
 }
 
 const { title, background } = Astro.props;
@@ -25,7 +25,7 @@ const { title, background } = Astro.props;
   </head>
   <body class="text-white bg-black">
     <Header/>
-    <main class="bg-cover h-screen pt-36 flex justify-around content-center flex-wrap bg-black" style=`background-image: url(${background});` >
+    <main class="bg-cover h-screen px-8 pt-36 flex justify-around content-center flex-wrap bg-black" style=`background-image: url(${background});` >
       <slot />
     </main>
   </body>

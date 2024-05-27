@@ -17,9 +17,9 @@ export default {
 				white: '#FFFFFF',
 			},
 			boxShadow: {
-				'circle': '0 0 0 70px rgba(255, 255, 255, 0.15)',
+				circle: '0 0 0 70px rgba(255, 255, 255, 0.15)',
 			}
 		},
 	},
-	plugins: [],
+	plugins: [require('tailwind-hamburgers')],
 }
