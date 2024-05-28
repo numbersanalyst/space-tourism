@@ -9,6 +9,29 @@ const optimizedBackground = await getImage({src: background, format: 'webp'});
 
 <Layout title="Space tourism - Destination" background={optimizedBackground.src}>
     <Content title="Pick your destination" number="01">
-        
+        <div class="flex items-center justify-around">
+            <div class="w-1/2">img</div>
+            <div class="w-1/2">
+                <div class="flex gap-10 h-14">
+                    <button class="uppercase border-white transition-all pt-1 border-b-4">Home</button>
+                    <button class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30">Home</button>
+                    <button class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30">Home</button>
+                    <button class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30">Home</button>
+                </div>
+                <h1 class="font-serif text-8xl uppercase">Mars</h1>
+                <p class="text-accent">Lorem ipsum</p>
+                <hr class="w-full bg-accent h-[1px] opacity-20 z-10">
+            </div>
+            <div>
+                <div>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
     </Content>
 </Layout>
