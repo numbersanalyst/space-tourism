@@ -4,32 +4,56 @@ import Layout from "../layouts/Layout.astro";
 import { getImage } from "astro:assets";
 import background from "../assets/destination/background-destination-desktop.jpg";
 import Content from "../components/Content.astro";
-const optimizedBackground = await getImage({src: background, format: 'webp'});
+const optimizedBackground = await getImage({ src: background, format: "webp" });
 ---
 
-<Layout title="Space tourism - Destination" background={optimizedBackground.src}>
+<Layout
+    title="Space tourism - Destination"
+    background={optimizedBackground.src}
+>
     <Content title="Pick your destination" number="01">
-        <div class="flex items-center justify-around">
-            <div class="w-1/2">img</div>
+        <div class="flex items-center justify-around gap-2">
             <div class="w-1/2">
-                <div class="flex gap-10 h-14">
-                    <button class="uppercase border-white transition-all pt-1 border-b-4">Home</button>
-                    <button class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30">Home</button>
-                    <button class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30">Home</button>
-                    <button class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30">Home</button>
-                </div>
-                <h1 class="font-serif text-8xl uppercase">Mars</h1>
-                <p class="text-accent">Lorem ipsum</p>
-                <hr class="w-full bg-accent h-[1px] opacity-20 z-10">
+                <img src="../assets/destination/image-mars.webp" alt="Mars" />
             </div>
-            <div>
+            <div class="w-1/2">
                 <div>
-                    <p></p>
-                    <p></p>
+                    <div class="flex gap-10 h-14 font-condensed">
+                        <button
+                            class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30"
+                            >Moon</button
+                        >
+                        <button
+                            class="uppercase border-white transition-all pt-1 border-b-4"
+                            >Mars</button
+                        >
+                        <button
+                            class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30"
+                            >Europa</button
+                        >
+                        <button
+                            class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30"
+                            >Titan</button
+                        >
+                    </div>
+                    <h1 class="font-serif text-8xl uppercase">Mars</h1>
+                    <p class="text-accent">
+                        Don't forget to pack your hiking boots. You'll need them
+                        to tackle Olympus Mons, the tallest planetary mountain
+                        in our solar system. It's two and a half times the sife
+                        of Everest!
+                    </p>
+                    <hr class="w-full bg-accent h-[1px] opacity-20 z-10" />
                 </div>
-                <div>
-                    <p></p>
-                    <p></p>
+                <div class="flex gap-8">
+                    <div class="uppercase">
+                        <p class="text-accent font-condensed text-sm tracking-[2.73px]">AVG. DISTANCE</p>
+                        <p class="font-serif text-3xl">225 MIL. KM</p>
+                    </div>
+                    <div class="uppercase">
+                        <p>EST. TRAVEL TIME</p>
+                        <p>9 MONTHS</p>
+                    </div>
                 </div>
             </div>
         </div>

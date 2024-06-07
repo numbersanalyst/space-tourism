@@ -7,7 +7,7 @@ interface Props {
 const {number, title} = Astro.props;
 ---
 
-<div class="w-full">
+<div class="w-full max-w-[1400px]">
     <p class="uppercase font-condensed text-[28px] tracking-[4.75px]"><span class="opacity-25 font-bold mr-4">{number}</span>{title}</p>
     <slot />
 </div>
