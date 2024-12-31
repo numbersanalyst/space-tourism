@@ -3,6 +3,8 @@ import "@fontsource/barlow";
 import "@fontsource/bellefair";
 import "@fontsource/barlow-condensed";
 
+import { ViewTransitions } from "astro:transitions";
+
 import Header from "../components/Header.astro";
 
 interface Props {
@@ -21,12 +23,31 @@ const { title, background } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="./favicon-32x32.png" />
     <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
     <title>{title}</title>
   </head>
   <body class="text-white bg-black">
-    <Header/>
-    <main class="bg-cover h-screen px-8 pt-36 flex justify-around content-center flex-wrap bg-black" style=`background-image: url(${background});` >
+    <div
+      id="loading"
+      class="fixed inset-0 bg-black z-50 transition-opacity duration-500 opacity-1 pointer-events-none"
+    >
+    </div>
+    <Header transition:persist />
+    <main
+      class="bg-cover min-h-screen px-8 pt-36 flex justify-around content-center flex-wrap bg-black"
+      style=`background-image: url(${background});`
+    >
       <slot />
     </main>
   </body>
 </html>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const loadingScreen = document.querySelector("#loading");
+    if (loadingScreen) {
+      loadingScreen.classList.remove("opacity-1");
+      loadingScreen.classList.add("opacity-0");
+    }
+  });
+</script>
