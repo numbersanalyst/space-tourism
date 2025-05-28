@@ -1,18 +1,34 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-import { getImage } from "astro:assets";
-import background from "../assets/home/background-home-desktop.jpg";
-const optimizedBackground = await getImage({src: background, format: 'webp'});
 ---
 
-<Layout title="Space tourism" background={optimizedBackground.src}>
-  <div>
-    <p class="font-condensed uppercase text-accent text-[28px] tracking-[4.75px]">So, you want to travel</p>
-    <h1 class="font-serif uppercase text-[150px]">Space</h1>
-    <p class="text-lg text-accent max-w-[500px]">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
-  </div>
-  <div class="flex justify-end items-end">
-    <a href="./destination" class="font-serif text-[32px] uppercase bg-white text-black w-[274px] h-[274px] rounded-full flex items-center justify-center transition-shadow duration-700 hover:shadow-circle">Explore</a>
-  </div>
+<Layout title="Space tourism">
+    <style>
+        :root {
+            --mobile-bg: url("../assets/crew/background-crew-mobile.jpg");
+            --tablet-bg: url("../assets/crew/background-crew-tablet.jpg");
+            --desktop-bg: url("../assets/crew/background-crew-desktop.jpg");
+        }
+    </style>
+    <div>
+        <p
+            class="font-condensed uppercase text-accent text-[28px] tracking-[4.75px]"
+        >
+            So, you want to travel
+        </p>
+        <h1 class="font-serif uppercase text-[150px]">Space</h1>
+        <p class="text-lg text-accent max-w-[500px]">
+            Let’s face it; if you want to go to space, you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back, and relax because we’ll give you a truly out of this
+            world experience!
+        </p>
+    </div>
+    <div class="flex justify-end items-end">
+        <a
+            href="./destination"
+            class="font-serif text-[32px] uppercase bg-white text-black w-[274px] h-[274px] rounded-full flex items-center justify-center transition-shadow duration-700 hover:shadow-circle"
+            >Explore</a
+        >
+    </div>
 </Layout>

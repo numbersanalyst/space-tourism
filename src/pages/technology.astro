@@ -1,10 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-import { getImage } from "astro:assets";
-import background from "../assets/technology/background-technology-desktop.jpg";
-const optimizedBackground = await getImage({src: background, format: 'webp'});
 ---
 
-<Layout title="Space tourism - Technology" background={optimizedBackground.src}>
+<Layout title="Space tourism - Technology">
+    <style>
+        :root {
+            --mobile-bg: url("../assets/technology/background-technology-mobile.jpg");
+            --tablet-bg: url("../assets/technology/background-technology-tablet.jpg");
+            --desktop-bg: url("../assets/technology/background-technology-desktop.jpg");
+        }
+    </style>
 </Layout>

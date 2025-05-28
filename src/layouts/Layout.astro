@@ -9,10 +9,9 @@ import Header from "../components/Header.astro";
 
 interface Props {
   title: String;
-  background: String;
 }
 
-const { title, background } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,6 +24,24 @@ const { title, background } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
     <title>{title}</title>
+    <style>
+      main {
+        background-image: var(--mobile-bg);
+        background-size: cover;
+      }
+    
+      @media (min-width: 768px) {
+        main {
+          background-image: var(--tablet-bg);
+        }
+      }
+    
+      @media (min-width: 1024px) {
+        main {
+          background-image: var(--desktop-bg);
+        }
+      }
+    </style>    
   </head>
   <body class="text-white bg-black">
     <div
@@ -35,7 +52,6 @@ const { title, background } = Astro.props;
     <Header transition:persist />
     <main
       class="bg-cover min-h-screen px-8 pt-36 flex justify-around content-center flex-wrap bg-black"
-      style=`background-image: url(${background});`
     >
       <slot />
     </main>
