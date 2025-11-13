@@ -9,6 +9,28 @@ const navLinks = [
 ];
 ---
 
+<style>
+    .active::after,
+    .active-hover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        background-color: white;
+        transition: opacity .3s ease-in-out;
+    }
+
+    .active-hover::after {
+        opacity: 0;
+    }
+
+    .active-hover:hover::after {
+        opacity: .3;
+    }
+</style>
+
 <header class="fixed top-0 left-0 right-0 flex justify-between items-center md:py-7 shrink-0 font-condensed">
     <img class="mx-12 w-12 h-12" src="./shared/logo.svg" alt="close">
     <div class="sm:w-2/5 bg-white h-[1px] opacity-20 mr-[-20px] lg:mr-[-30px] z-10"></div>
@@ -17,10 +39,10 @@ const navLinks = [
             <a 
                 href={path}
                 class:list={[
-                    "h-full flex items-center border-white transition-all",
+                    "h-full flex items-center border-white transition-all relative",
                     currPath === path 
-                        ? "pt-1 border-b-4" 
-                        : "hover:pt-1 hover:border-b-4 border-opacity-30"
+                        ? "active" 
+                        : "active-hover"
                 ]}
             >
                 <b class="mr-2 hidden md:block">{number}</b> {label}
