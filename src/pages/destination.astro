@@ -10,6 +10,26 @@ import Content from "../components/Content.astro";
             --tablet-bg: url("../assets/destination/background-destination-tablet.jpg");
             --desktop-bg: url("../assets/destination/background-destination-desktop.jpg");
         }
+
+        .active::after,
+        .active-hover::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 4px;
+            background-color: white;
+            transition: opacity .3s ease-in-out;
+        }
+
+        .active-hover::after {
+            opacity: 0;
+        }
+
+        .active-hover:hover::after {
+            opacity: .3;
+        }
     </style>
     <Content title="Pick your destination" number="01">
         <div class="flex items-center justify-around gap-2">
@@ -20,19 +40,19 @@ import Content from "../components/Content.astro";
                 <div>
                     <div class="flex gap-10 h-14 font-condensed">
                         <button
-                            class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30"
+                            class="text-accent uppercase border-white relative active-hover"
                             >Moon</button
                         >
                         <button
-                            class="uppercase border-white transition-all pt-1 border-b-4"
+                            class="uppercase border-white relative active"
                             >Mars</button
                         >
                         <button
-                            class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30"
+                            class="text-accent uppercase border-white relative active-hover"
                             >Europa</button
                         >
                         <button
-                            class="text-accent uppercase border-white transition-all hover:pt-1 hover:border-b-4 border-opacity-30"
+                            class="text-accent uppercase border-white relative active-hover"
                             >Titan</button
                         >
                     </div>
